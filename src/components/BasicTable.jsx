@@ -1,12 +1,12 @@
 import './table.css';
-import { COLUMNS } from './columns';
+import { GROUPED_COLUMNS } from './columns';
 import { useTable } from 'react-table';
 import { useMemo } from 'react';
 import MOCK_DATA from '../../data/MOCK_DATA.json';
 
 export const BasicTable = () => {
   const data = useMemo(() => MOCK_DATA, []);
-  const columns = useMemo(() => COLUMNS, []);
+  const columns = useMemo(() => GROUPED_COLUMNS, []);
 
   const { getTableProps, getTableBodyProps, headerGroups, footerGroups, rows, prepareRow } = useTable({ columns, data });
 
