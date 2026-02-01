@@ -1,9 +1,10 @@
 import "./table.css";
 import { COLUMNS } from "./columns";
-import { useTable, useSortBy, useGlobalFilter } from "react-table";
+import { useTable, useSortBy, useGlobalFilter, useFilters } from "react-table";
 import { useMemo } from "react";
 import MOCK_DATA from "../../data/MOCK_DATA.json";
 import { GlobalFilter } from "./GlobalFilter";
+import { ColumnFilter } from "./ColumnFilter";
 
 export const FilteringTable = () => {
   const data = useMemo(() => MOCK_DATA, []);
@@ -18,7 +19,7 @@ export const FilteringTable = () => {
     prepareRow,
     state,
     setGlobalFilter,
-  } = useTable({ columns, data }, useGlobalFilter, useSortBy);
+  } = useTable({ columns, data }, useFilters, useGlobalFilter, useSortBy);
 
   const { globalFilter } = state;
 
@@ -39,6 +40,7 @@ export const FilteringTable = () => {
                         : " 🔼"
                       : ""}
                   </span>
+                  <div>{column.canFilter ? column.render("Filter") : null}</div>
                 </th>
               ))}
             </tr>
