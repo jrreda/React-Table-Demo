@@ -10,6 +10,10 @@ export const FilteringTable = () => {
   const data = useMemo(() => MOCK_DATA, []);
   const columns = useMemo(() => COLUMNS, []);
 
+  const defaultColumn = useMemo(() => ({
+    Filter: ColumnFilter,
+  }), []);
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -19,7 +23,7 @@ export const FilteringTable = () => {
     prepareRow,
     state,
     setGlobalFilter,
-  } = useTable({ columns, data }, useFilters, useGlobalFilter, useSortBy);
+  } = useTable({ columns, data, defaultColumn }, useFilters, useGlobalFilter, useSortBy);
 
   const { globalFilter } = state;
 

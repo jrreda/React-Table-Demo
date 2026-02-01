@@ -6,19 +6,17 @@ export const COLUMNS = [
     Header: 'Id',
     Footer: 'Id',
     accessor: 'id',
-    Filter: ColumnFilter,
+    disableFilters: true,
   },
   {
     Header: 'First Name',
     Footer: 'First Name',
     accessor: 'first_name',
-    Filter: ColumnFilter,
   },
   {
     Header: 'Last Name',
     Footer: 'Last Name',
     accessor: 'last_name',
-    Filter: ColumnFilter,
   },
   {
     Header: 'Date of Birth',
@@ -27,25 +25,21 @@ export const COLUMNS = [
     Cell: ({ value }) => {
       return <span>{format(new Date(value), "MM/dd/yyyy")}</span>;
     },
-    Filter: ColumnFilter,
   },
   {
     Header: 'Country',
     Footer: 'Country',
     accessor: 'country',
-    Filter: ColumnFilter,
   },
   {
     Header: 'Phone',
     Footer: 'Phone',
     accessor: 'phone',
-    Filter: ColumnFilter,
   },
   {
     Header: 'Email',
     Footer: 'Email',
     accessor: 'email',
-    Filter: ColumnFilter,
   }
 ];
 
