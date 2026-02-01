@@ -1,10 +1,10 @@
 import './App.css'
-import { BasicTable } from './components/BasicTable'
+import { SortingTable } from './components/SortingTable'
 
 function App() {
   return (
     <div>
-      <BasicTable />
+      <SortingTable />
     </div>
   )
 }
