@@ -1,10 +1,10 @@
 import './App.css'
-import { PaginationTable } from './components/PaginationTable'
+import { ColumnOrderTable } from './components/ColumnOrder'
 
 function App() {
   return (
     <div>
-      <PaginationTable />
+      <ColumnOrderTable />
     </div>
   )
 }
